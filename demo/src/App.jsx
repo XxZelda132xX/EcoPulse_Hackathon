@@ -9,59 +9,55 @@ import Pic3 from './assets/pic3.png'
 import Pic4 from './assets/pic4.png'
 import Pic5 from './assets/pic5.png'
 import Pic6 from './assets/pic6.png'
+import Pic7 from './assets/pic7.png'
 
 const mockSources = [
   {
-    location: 'Rajm Khashman – Muslan, Al Ahmadi, Kuwait',
+    location: 'Shedgum Gas Plant – Eastern Province, Saudi Arabia',
     data: [
-      ['Source Emission Rate', '12.5 kg CH4/hr'],
-      ['Source Persistence', '87%'],
-      ['Number of Plumes', '5'],
-      ['Days Observed', '14'],
+      ['Source Emission Rate', '104.43  kg CH4/hr'],
+      ['Confidence Interval', '95%'],
     ],
   },
   {
-    location: 'Al Safa – Riyadh, Saudi Arabia',
+    location: 'Shedgum Gas Plant – Eastern Province, Saudi Arabia',
     data: [
-      ['Source Emission Rate', '8.2 kg CH4/hr'],
-      ['Source Persistence', '65%'],
-      ['Number of Plumes', '3'],
-      ['Days Observed', '9'],
+      ['Source Emission Rate', '104.43 ± 10.59 t/h'],
+      ['Confidence Interval', '95%'],
     ],
   },
   {
-    location: 'Jebel Ali – Dubai, UAE',
+    location: 'Shedgum Gas Plant – Eastern Province, Saudi Arabia',
     data: [
-      ['Source Emission Rate', '15.1 kg CH4/hr'],
-      ['Source Persistence', '92%'],
-      ['Number of Plumes', '7'],
-      ['Days Observed', '18'],
+      ['Source Emission Rate', '104.43 ± 10.59 t/h'],
+      ['Confidence Interval', '95%'],
     ],
   }, {
-    location: 'Jebel Ali – Dubai, UAE',
+    location: 'Shedgum Gas Plant – Eastern Province, Saudi Arabia',
     data: [
-      ['Source Emission Rate', '15.1 kg CH4/hr'],
-      ['Source Persistence', '92%'],
-      ['Number of Plumes', '7'],
-      ['Days Observed', '18'],
+      ['Source Emission Rate', '104.43 ± 10.59 t/h'],
+      ['Confidence Interval', '95%'],
     ],
   },
   {
-    location: 'Jebel Ali – Dubai, UAE',
+    location: 'Shedgum Gas Plant – Eastern Province, Saudi Arabia',
     data: [
-      ['Source Emission Rate', '15.1 kg CH4/hr'],
-      ['Source Persistence', '92%'],
-      ['Number of Plumes', '7'],
-      ['Days Observed', '18'],
+      ['Source Emission Rate', '104.43 ± 10.59 t/h'],
+      ['Confidence Interval', '95%'],
     ],
   },
   {
-    location: 'Basra Industrial – Basra, Iraq',
+    location: 'Shedgum Gas Plant – Eastern Province, Saudi Arabia',
     data: [
-      ['Source Emission Rate', '6.7 kg CH4/hr'],
-      ['Source Persistence', '48%'],
-      ['Number of Plumes', '2'],
-      ['Days Observed', '6'],
+      ['Source Emission Rate', '104.43 ± 10.59 t/h'],
+      ['Confidence Interval', '95%'],
+    ],
+  },
+  {
+    location: 'Aux Boiler 1, Shedgum Gas Plant',
+    data: [
+      ['Source Emission Rate', '104.43 ± 10.59 t/h'],
+      ['Confidence Interval', '95%'],
     ],
   },
 ];
@@ -74,7 +70,8 @@ function App() {
     Pic3,
     Pic4,
     Pic5,
-    Pic6
+    Pic6,
+    Pic7
   ];
 
   const [searchText, setSearchText] = useState('');
@@ -122,6 +119,46 @@ function App() {
               />
             </Form>
           </div>
+          {currentIndex === 5 && (
+            <Button
+              variant="warning"
+              style={{
+                position: 'absolute',
+                bottom: '66%',
+                right: '46%',
+                zIndex: 999,
+                width: '16px',
+                height: '16px',
+                borderRadius: '50%',
+                border: "2px solid white",
+                padding: 0,
+                minWidth: 0,
+              }}
+              onClick={handleClick}
+              aria-label="Floating dot"
+            />
+          )}
+          {currentIndex === 6 && (
+            <Button
+              variant="warning"
+              style={{
+                position: 'absolute',
+                bottom: '56%',
+                right: '34%',
+                zIndex: 999,
+                width: '16px',
+                height: '16px',
+                borderRadius: '50%',
+                border: "2px solid white",
+                padding: 0,
+                minWidth: 0,
+              }}
+              onClick={handleClick}
+              aria-label="Floating dot"
+            />
+          )}
+
+
         </Col>
 
 
@@ -136,7 +173,8 @@ function App() {
           }}
         >
           <div className="mb-3 w-100">
-            <h6 className="fw-semibold text-muted mb-1">Facility Location</h6>
+            {currentIndex < 6 && <h6 className="fw-semibold text-muted mb-1">Facility Location</h6>}
+            {currentIndex === 6 && <h6 className="fw-semibold text-muted mb-1">Asset Location</h6>}
             <h5 className="fw-bold text-dark">{currentSource.location}</h5>
           </div>
 
