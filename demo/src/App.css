@@ -1,0 +1,22 @@
+#root {
+  /* max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem; */
+  text-align: left
+}
+
+.custom-tabs .nav-link {
+  color: #555; /* muted gray for inactive tabs */
+  font-weight: 500;
+  border: none;
+}
+
+.custom-tabs .nav-link.active {
+  color: #222; /* darker, elegant active tab */
+  background-color: transparent;
+  border-bottom: 2px solid #222; /* subtle underline */
+}
+
+.custom-tabs .tab-content {
+  transition: opacity 0.4s ease-in-out;
+}
